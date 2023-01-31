@@ -1,0 +1,597 @@
+Q1. Write a program to define a structure ‘Tender’ having data members – tender_no,
+cost and company_name. Accept & display data of this structure.
+ans :
+
+#include<iostream>
+#include<conio.h>
+#include<cstring>
+using namespace std;
+struct tender{
+   
+   int tender_no;
+   int tender_cost;
+   char company_name[150];
+   
+}tenderr;
+
+int main(){
+   
+    tenderr.tender_no;
+    tenderr.tender_cost;
+    tenderr.company_name;
+    cout<<"Enter Tender No :"<<endl;
+    cin>>tenderr.tender_no;
+    cout<<"Enter Tender Cost (in Rupees) :"<<endl;
+    cin>>tenderr.tender_cost;
+    cout<<"Enter Company name :"<<endl;
+    cin>>tenderr.company_name;    
+    cout<<endl<<"\n\nCompany Name : "<<tenderr.company_name<<endl;
+    cout<<"Tender No. : "<<tenderr.tender_no<<endl;    
+    cout<<"Tender Cost (in Rupees) : "<<tenderr.tender_cost<<endl;    
+    return 0;
+}
+
+
+Q2. Write structure declaration for books having following members: 1. Title 2. Author
+3. Publication 4. Price
+ans :
+
+#include<iostream>
+#include<conio.h>
+#include<cstring>
+using namespace std;
+struct book{
+   
+   char title[150];
+   char author[150];
+   char publication[150];
+   int price;
+   
+}books;
+
+int main(){
+   
+    books.title;
+    books.author;
+    books.publication;
+    books.price;
+    cout<<"Enter Book Title :"<<endl;
+    cin>>books.title;
+    cout<<"Enter Book author :"<<endl;
+    cin>>books.author;
+    cout<<"Enter Book Publication :"<<endl;
+    cin>>books.publication;
+    cout<<"Enter Book Price :"<<endl;
+    cin>>books.price;    
+    cout<<endl<<"\n\nBook Name : "<<books.title<<endl;
+    cout<<"Book Author : "<<books.author<<endl;    
+    cout<<"Book Publication : "<<books.publication<<endl;    
+    cout<<"Book Price : Rs. "<<books.price<<"/-"<<endl;        
+    return 0;
+}
+
+
+Q3. Write structure declaration for students having following member – stud_name,
+roll_no, cpp_mark, ip_mark.
+ans:
+
+#include<iostream>
+#include<conio.h>
+#include<cstring>
+using namespace std;
+struct mrkshit{
+   char stu_name[150];
+   char roll_no[150];
+   int cpp_mark;
+   int ip_mark;   
+}mrkshits;
+
+int main(){
+   
+    mrkshits.stu_name;
+    mrkshits.roll_no;
+    mrkshits.cpp_mark;
+    mrkshits.ip_mark;
+    cout<<"Enter Student Name :"<<endl;
+    cin>>mrkshits.stu_name;
+    cout<<"Enter Roll No :"<<endl;
+    cin>>mrkshits.roll_no;
+    cout<<"Enter Cpp Marks :"<<endl;
+    cin>>mrkshits.cpp_mark;
+    cout<<"Enter Ip Marks :"<<endl;
+    cin>>mrkshits.ip_mark;    
+    cout<<endl<<"\n\nStudent Name : "<<mrkshits.stu_name<<endl;
+    cout<<"Roll No : "<<mrkshits.roll_no<<endl;    
+    cout<<"Cpp Mark : "<<mrkshits.cpp_mark<<endl;    
+    cout<<"IP Mark : "<<mrkshits.ip_mark<<endl;        
+    return 0;
+}
+
+
+Q4. Write a structure that will print your mailing address in the following form: First 
+line: Name, Second Line: Door No, Street, Third line: City, Pincode.
+ans:
+
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+struct address{
+   string addr_firstl;
+   string addr_secondl;
+   string addr_thirdl;   
+}address;
+
+int main(){
+   
+    address.addr_firstl;
+    address.addr_secondl;
+    address.addr_thirdl;
+    cout<<"Enter Address First Line :"<<endl;
+    getline(cin,address.addr_firstl);
+    cout<<"Enter Address Second Line :"<<endl;
+    getline(cin,address.addr_secondl);
+    cout<<"Enter Address Third Line :"<<endl;
+    getline(cin,address.addr_thirdl);
+    cout<<endl<<"\n\nAddress :"<<endl<<address.addr_firstl<<endl;
+    cout<<address.addr_secondl<<endl;
+    cout<<address.addr_thirdl<<endl;    
+    return 0;
+}
+
+
+Q5. Program: to create a class to store the account details of the bank. Include account 
+number, member name, balance & account type i.e. saving, current, etc.
+ans:
+
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+class acc_det{
+   string acc_no;
+   string mem_name;
+   int acc_bal; 
+   int acc_type;
+   public:
+   void ac(string a, string b, int c, int d){
+      a=acc_no;
+      b=mem_name;
+      c=acc_bal;
+      d=acc_type;
+      cout<<"\nEnter Your Account no : "<<endl;
+      getline(cin,a);
+      cout<<"Enter Your Member Name : "<<endl;
+      getline(cin,b);
+      cout<<"Enter Your Account Balance : "<<endl;
+      cin>>c;
+      cout<<"Select Account Type : \n 1. Saving Account \n 2. Current Account  "<<endl;
+      cin>>d;           
+      switch(d){
+           case 1:
+           cout<<"\nAccout Type : Saving Account"<<endl;
+           cout<<"Account No :"<<a<<endl;
+           cout<<"Member Name :"<<b<<endl;
+           cout<<"Account Balance : Rs. "<<c<<"/-"<<endl;           
+           break;
+           
+           case 2:
+           cout<<"\nAccout Type : Current Account"<<endl;
+           cout<<"Account No :"<<a<<endl;
+           cout<<"Member Name :"<<b<<endl;
+           cout<<"Account Balance : Rs. "<<c<<"/-"<<endl;
+           break;           
+           
+           default:
+           cout<<"\n Invalid Account Selection.";
+           break;
+      }      
+      
+   }
+};
+
+int main(){
+     string i,j;
+     int k,l;
+     acc_det det;
+     det.ac(i,j,k,l);
+     return 0;
+}
+
+
+Q6. Write a program to prepare the Electricity bill for consumers, given the following 
+information: service numbers, previous meter reading and current meter reading 
+(using class). The output must contain service number, units consumed & electricity 
+charges. Take the charges as Rs. 1.50 per unit.
+Ans:
+
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+class elec_bill{
+   string ser_no;
+   float pre_mread, cur_mread; 
+   float unit_con, elec_chrg;
+   float per_unit=1.50;
+   public:
+   void elec(string a, float b, float c, float d, float e, float f){
+      a=ser_no;
+      b=pre_mread;
+      c=cur_mread;
+      d=unit_con;
+      e=elec_chrg;
+      f=per_unit;
+      cout<<"Enter Your Service Number :"<<endl;
+      getline(cin,a);      
+      cout<<"Enter Previous Meter Reading :"<<endl; 
+      cin>>b;
+      cout<<"Enter Current Meter Reading :"<<endl;
+      cin>>c;      
+      cout<<"Service Number :"<<a<<endl;
+      cout<<"Previous Meter Reading : "<<b<<" Unit"<<endl;
+      cout<<"Current Meter Reading :"<<c<<" Unit"<<endl;
+      d=c-b;      
+      cout<<"Unit Consumed : "<<d<<" Unit"<<endl;
+      e=d*f;
+      cout<<"Electricity Charges : Rs. "<<e<<"/-"<<endl;      
+   }
+};
+
+int main(){
+     string i;
+     float j,k,l,m,n;
+     elec_bill bill;
+     bill.elec(i,j,k,l,m,n);
+     return 0;
+}
+
+
+Q7. Write a C++ program that will ask for temperature in Celsius & convert it into 
+Fahrenheit using class Temp & its member functions
+ans:
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+class cnvrt {
+public:
+    float ctof(float cels) {
+        return cels * 9 / 5 + 32;
+    }
+};
+
+int main() {
+    float cels;
+    cnvrt tofar;
+    cout<<"Enter the Degree Celsius :" << endl;
+    cin>>cels;
+    cout<<"Farehnite = "<<tofar.ctof(cels);
+    return 0;
+}
+
+
+
+Q8. Given that an EMPLOYEE class contains following members: data members: 
+Employee number, Employee name, Basic, DA, IT, Net Salary and print data 
+members
+ans:
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+class emp{
+	string  emp_name,  emp_no;
+	float emp_basic, emp_da, emp_it, emp_sal;
+
+	public:
+
+		void emp_det();
+		float net_sal(float basic, float da, float it);
+		void emp_info();
+};
+
+void emp :: emp_det()
+{
+	cout<<"Enter employee name: "<<endl;
+	getline(cin,emp_name);   
+	cout<<"Enter employee number: "<<endl;
+	getline(cin,emp_no);
+	cout<<"Enter employee basic: "<<endl;
+	cin>>emp_basic;
+	cout<<"Enter employee DA: "<<endl;
+	cin>>emp_da;
+	cout<<"Enter employee IT: "<<endl;
+	cin>>emp_it;
+}
+
+float emp :: net_sal(float a, float b, float c)
+{
+    float d=(a+b)-c;
+    return d;
+}
+
+void emp :: emp_info()
+{
+	cout<<"\n=============================================================\n";
+	cout<<"\tEmployee Salary Slip";	
+	cout<<"\n=============================================================";	
+	cout<<"\nEmployee Name      : "<<emp_name;
+	cout<<"\nEmployee number    : "<<emp_no;
+	cout<<"\nBasic salary       : Rs. "<<emp_basic<<"/-";
+	cout<<"\nEmployee DA        : Rs. "<<emp_da<<"/-";
+	cout<<"\nIncome Tax         : Rs. "<<emp_it<<"/-";
+	cout<<"\nNet Salary         : Rs. "<<net_sal(emp_basic, emp_da, emp_it)<<"/-";
+	cout<<"\n=============================================================\n\n";
+}
+
+
+int main()
+{
+    emp employee;
+    employee.emp_det();
+    employee.emp_info();
+    return 0;
+}
+
+
+
+Q9. Write a C++ program to read the data of N employee and compute Net salary of each 
+employee (DA=52% of Basic and Income Tax (IT) =30% of the gross salary).
+ans:
+
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+class emp{
+   string emp_name;
+   string emp_no;
+   float basic, da, it, gross, netsal;
+   public:
+   void emp_det(int m){
+	 cout<<"\nEnter Employee["<<m<<"] Details"<<endl;
+	 cout<<"\nEmployee Name: ";
+	 getline(cin,emp_name);	 
+	 cout<<"\nEmployee Number: ";
+	 getline(cin,emp_no);
+	 cout<<"Basic Salary: ";
+	 cin>>basic;
+   }
+   
+   float net(){
+      da = basic * 0.52;
+      gross = basic + da;
+      it = gross * 0.30;
+      netsal = (basic + da) - it;
+      return netsal;
+   }
+   
+   void emp_info(int m){
+      cout<<"\nEmployee ["<<m<<"] Details\n";
+      cout<<"\nEmployee Name	: "<<emp_name;      
+      cout<<"\nEmployee Number	: "<<emp_no;
+      cout<<"\nNet Salary: "<<netsal;
+   }
+   
+};
+
+int main(){
+   emp employee[100];
+   int n, m;
+   cout<<"Enter the number of Employees in Company :"<<endl;
+   cin>>n;
+   for(m=0; m< n; m++){
+      employee[m].emp_det(m);
+   }
+   for(m=0; m < n; m++){
+      employee[m].net();
+   }
+   for(m=0; m < n; m++){
+      employee[m].emp_info(m);
+   }
+   return 0;
+}
+
+
+
+Q.10 Write a C++ Program to display Names, Roll No., and grades of 5 students who 
+have appeared in the examination. Declare the class of name, Roll No. and 
+grade. Create an array of class objects. Read and display the contents of the 
+array.
+ans:
+
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+class stud{
+    string cls;
+    string stu_name;  
+    int roll_no;
+    int tot_mark;
+    public:
+    int stu_det(int b){
+      cout<<": Enter Student No ["<<b<<"] Details :"<<endl;
+      string cl=cls;
+      cout<<"Enter Class of Student : "<<endl;
+      getline(cin,cl);      
+      cout<<"Enter Student Name : "<<endl;
+      getline(cin,stu_name);
+      cout<<"Enter Student Roll No : "<<endl;
+      cin>>roll_no;
+      cout<<"Enter Student Total Marks : "<<endl;
+      cin>>tot_mark;
+      return 0;
+     }
+    
+    int stu_info(int b){
+      cout<<": Student No ["<<b<<"] Details : "<<endl;   
+      cout<<"Class of Student : "<<cls<<endl;      
+      cout<<"Student Name : "<<stu_name<<endl;
+      cout<<"Student Roll No : "<<roll_no<<endl; 
+      if(tot_mark<=100 && tot_mark>=80){ 
+      cout<<"Student Grade : 'A' Grade"<<endl;       
+      }
+      else if(tot_mark>=70 && tot_mark<80){
+      cout<<"Student Total Marks : 'B' Grade"<<endl;         
+      }
+      else if(tot_mark>=50 && tot_mark<70){
+      cout<<"Student Total Marks : 'C' Grade"<<endl;         
+      }
+      else if(tot_mark>=35 && tot_mark<50){
+      cout<<"Student Total Marks : 'D' Grade"<<endl;   
+      }
+      else if(tot_mark>=0 && tot_mark<35){
+      cout<<"Student Total Marks : Fail!!! Butter Luck Next time"<<endl;   
+      }      
+      else{
+        cout<<"You Entered Incorrect Marks"; 
+      }
+      return 0;
+   }
+};
+
+    int main(){
+       
+       stud student[10];
+       int a,b;
+       cout<<"Enter Number of Students : "<<endl;
+       cin>>a; 
+       for(b=1;b<=a;b++){
+          student[b].stu_det(b);
+       }
+       for(b=1;b<=a;b++){
+          student[b].stu_info(b);
+       }       
+       return 0;
+    }
+
+
+Q11. Write a C++ Program to display Emp_ID, Emp_Name, and Emp_age of 
+Employees. Create an array of class objects. Read and display the contents of 
+the array.
+ans:
+
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+class emp{
+    string emp_id;
+    string emp_name;  
+    int emp_age;
+    public:
+    int emp_det(int b){
+      cout<<": Enter Employee Sr. No ["<<b<<"] Details :"<<endl;
+      cout<<""<<endl;
+      cout<<"Enter Employee Id : "<<endl;
+      getline(cin,emp_id);      
+      cout<<"Enter Employee Name : "<<endl;
+      getline(cin,emp_name);
+      cout<<"Enter Employee Age : "<<endl;
+      cin>>emp_age;
+      return 0;
+     }
+    
+    int emp_info(int b){
+      cout<<": Employee Sr. No ["<<b<<"] Details : "<<endl;   
+      cout<<"Employee Id : "<<emp_id<<endl;      
+      cout<<"Employee Name : "<<emp_name<<endl;
+      cout<<"Employee Age : "<<emp_age<<endl; 
+      return 0;
+   }
+};
+
+    int main(){
+       
+       emp employee[10];
+       int a,b;
+       cout<<"Enter Number of Employees : "<<endl;
+       cin>>a; 
+       for(b=1;b<=a;b++){
+          employee[b].emp_det(b);
+       }
+       
+       for(b=1;b<=a;b++){
+          employee[b].emp_info(b);
+       }
+       return 0;
+    }
+
+
+Q12. 12.Write a Program to Implement a Class STUDENT having Following Members:
+
+===========Data members=============
+Member ============ Description=======
+Sname		  ===> Name of the student
+Marks array  ===> Marks of the student
+Total		  ===> Total marks obtained
+Tmax		  ===> Total maximum marks
+===========Member functions===========
+
+==========Member Description==========
+assign()       ===> Assign Initial Values
+compute() 	 ===> To Compute Total, Average
+display() 	 ===> To Display the Data
+===================================
+
+ans:
+
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+class stu{
+    string sname;
+    int mark[7],total=0,tmax;
+    public:
+    int assign(){
+      cout<<"Enter Student Name : "<<endl;
+      getline(cin,sname);
+      int a;
+      for(a=0;a<7;a++){
+       cout<<"Enter Subject ["<<a<<"] Mark :"<<endl;
+       cin>>mark[a];        
+      }
+      return 0;
+   }
+    
+ int compute(){
+    int a;
+    int b;
+    for(a=0;a<7;a++){
+      if(mark[a]>b){
+            b = mark[a];
+            tmax=b;
+         }
+    }
+    
+    return 0;
+}
+    
+    int display(){
+      cout<<"Student Name : "<<sname<<endl;
+      int a;
+      cout<<"Marks : ";
+      for(a=0;a<7;a++){
+      cout<<" "<<mark[a]<<",";
+      }
+      cout<<endl;
+      cout<<"Max :"<<tmax<<endl;
+      return 0;
+   }
+};
+
+int main()
+{
+    stu student;
+    student.assign();
+    student.compute();
+    student.display();    
+    return 0;
+}
+
+
+
+Q13 will coming soon...........
