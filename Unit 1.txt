@@ -1,0 +1,375 @@
+Q1. Write a C++ program to perform addition, subtraction, multiplication and division of
+any two numbers.
+ans :
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+    int a,b;
+    cout<<"Enter Value of a variable :"<<endl;
+    cin>>a;
+    cout<<"Enter Value of b variable :"<<endl;
+    cin>>b;    
+    cout<<"Addition a and b is : "<<a+b<<endl;
+    cout<<"Subtraction a and b is : "<<a-b<<endl;
+    cout<<"Multiplication a and b is : "<<a*b<<endl;
+    cout<<"Division a and b is : "<<a/b<<endl;    
+    return 0;
+}
+
+
+Q2. Write a C++ program to swap two numbers without using third variable.
+ans:
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+    int a,b;
+    cout<<"Enter Value of a variable :"<<endl;
+    cin>>a;
+    cout<<"Enter Value of b variable :"<<endl;
+    cin>>b;    
+    cout<<"Before Swapping :"<<endl;    
+    cout<<"Value of a : "<<a<<endl;    
+    cout<<"Value of b : "<<b<<endl;        
+    a=a+b;
+    b=a-b;
+    a=a-b;
+    cout<<"After Swapping :"<<endl;    
+    cout<<"Value of a : "<<a<<endl;    
+    cout<<"Value of b : "<<b<<endl;    
+    return 0;
+}
+
+
+Q3. Write a C++ program to check no. is Even or odd using if else.
+ans:
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b;
+    cout<<"Enter Value to check it is even or odd  :"<<endl;
+    cin>>a;
+    if(a%2==0){
+       cout<<a<<" is even number."<<endl;    
+    }
+    else{
+       cout<<a<<" is odd number."<<endl;    
+    }   
+    return 0;
+}
+
+
+Q4. Write a C++ program to find the larger of two given numbers.
+ans:
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b;
+    cout<<"Enter Value of a variable :"<<endl;
+    cin>>a;
+    cout<<"Enter Value of b variable :"<<endl;
+    cin>>b;
+    if(a>b){
+       cout<<a<<" is large."<<endl;    
+    }
+    else{
+       cout<<b<<" is large."<<endl;    
+    }   
+    return 0;
+}
+
+
+Q5. Write a C++ program to find the smaller of two given numbers.
+ans:
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b;
+    cout<<"Enter Value of a variable :"<<endl;
+    cin>>a;
+    cout<<"Enter Value of b variable :"<<endl;
+    cin>>b;
+    if(a<b){
+       cout<<a<<" is smaller."<<endl;    
+    }
+    else{
+       cout<<b<<" is smaller."<<endl;    
+    }   
+    return 0;
+}
+
+
+Q6. Write a C++ program to check whether the entered character is an alphabet or not.
+ans:
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    char a;
+    cout<<"Enter Charachter in a variable :"<<endl;
+    cin>>a;
+    if((a>='a' && a<='z') || (a>='A' && a<='Z')){
+       cout<<a<<" is an alphabet ."<<endl;    
+    }
+    else{
+       cout<<a<<" is not an alphabet."<<endl;    
+    }   
+    return 0;
+}
+
+
+Q7. Write a C++ program to check whether the entered character is a vowel or not.
+ans:
+
+#include<iostream>
+using namespace std;
+int main()
+{
+   char a;
+   cout<<"Enter Charachter in a variable :"<<endl;
+   cin>>a;
+   if(a=='a' || a=='e' || a=='i' || a=='o' || a=='u'){
+      cout<<a<<" is vowel."<<endl;    
+   }
+   else{
+      cout<<a<<" is not vowel."<<endl;    
+   }   
+   return 0;
+} 
+
+
+Q8. Write a C++ program to check whether the input year is leap or not.
+ans:
+
+#include<iostream>
+using namespace std;
+int main()
+{
+   int a;
+   cout<<"Enter year :"<<endl;
+   cin>>a;
+   if(a%4==0 && a%100==0 && a%400==0){
+      cout<<a<<" is leap year"<<endl;    
+   }
+   else if(a%4==0 && a%100!=0){
+      cout<<a<<" is leap year"<<endl;    
+   }   
+   else{
+      cout<<a<<" is not leap year"<<endl;    
+   }
+   return 0;
+}
+
+
+Q9. Write a C++ program to check whether the input number is positive number or
+negative number.
+
+ans:
+
+#include<iostream>
+using namespace std;
+int main(){
+   int a;
+   cout<<"Enter value for a variable :"<<endl;
+   cin>>a;
+   if(a>0){
+      cout<<a<<" is positive number."<<endl;
+   }
+   else if(a==0){
+      cout<<a<<" is neutral."<<endl;
+   }
+   else{
+      cout<<a<<" is negative number."<<endl;
+   }
+}
+
+
+Q10. Write a C++ program to find the largest number among the three numbers.
+ans:
+
+#include<iostream>
+using namespace std;
+int main(){
+   int a,b,c;
+   cout<<"Enter three number :"<<endl;
+   cin>>a;
+   cin>>b;
+   cin>>c;
+   if(a>b){
+      if(a>c){
+         cout<<a<<" is largest than "<<b<<" and "<<c<<endl;         
+      }  
+      else{
+         cout<<c<<" is largest than "<<a<<" and "<<b<<endl;         
+      }
+   }
+   else{
+      if(b>c){
+         cout<<b<<" is largest than "<<a<<" and "<<b<<endl;         
+      }
+      else{
+         cout<<c<<" is largest than "<<a<<" and "<<b<<endl;         
+      }
+   }
+}
+
+
+Q11. Write a C++ program to check the given number is Armstrong number or not
+
+#include <iostream>
+using namespace std;
+int main()
+{
+     int a, b = 0;
+     cout << "Enter the number:--> ";
+     cin >> a;
+     int c = a;
+     while(a != 0)
+     {
+          int d = a % 10;
+          b = b + (d * d * d);
+          a = a / 10;
+     }
+     if(c == b)
+     {
+          cout<<c<<" is an Armstrong number";
+     }
+     else
+     {
+          cout<<c<<" is not an Armstrong number";
+     }
+     return 0;
+}
+
+
+Q12. Write a C++ program to check whether the entered number is palindrome or not.
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int main()
+{
+int a,b,c=0,d;
+cout<<"enter a number:";
+cin>>a;
+b=a;
+while(b!=0)
+{
+    d=b%10;
+    c=(c*10+d);
+    b=b/10;
+}
+if(c==a)
+   {
+    cout<<a<<" Number is palindrome";
+   }
+else
+   {
+    cout<<a<<" Number is not palindrome";
+   }
+}
+
+
+Q13. Write a C++ program for addition of digits of any given number
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int main()
+{
+    int a,b,c,d=0;
+    cout<<"Enter Value : ";
+    cin>>b;
+    c=b;
+    while(c>0)
+    {
+        a=c%10;
+        c=c/10;
+        d=d+a;
+    }
+    cout<<"\n Addition of digit  "<<b<<" = "<<d<<"\n";
+    return 0;
+}
+
+
+Q14. Write a C++ program to reverse a number
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int main()
+{
+    int a, b, c=0,d;
+    cout<<"Enter the Number: ";
+    cin>>a;
+    d=a;
+    while(a!=0)
+    {
+        b = a%10;
+        c = b + (c*10);
+        a = a/10;
+    }
+    cout<<"\nReverse :\n"<<d<<" <===> "<<c;
+    cout<<endl;
+    return 0;
+}
+
+
+
+Q15. Write a C++ program to check whether the number is prime or not
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int main() 
+{
+   int a,b,c= 0;
+   cout<<"Enter Value : "<<endl;
+   cin>>a;
+   for(b=2;b<=a/2;++b) 
+   {
+      if(a%b==0) 
+      {
+         c=1;
+         break;
+      }
+   }
+   if (c == 0)
+   cout<<"\n"<<a<<" is a prime number";
+   else
+   cout<<"\n"<<a<<" is not a prime number";
+   return 0;
+}
+
+
+Q16. Write a C++ program to find factorial of a number
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int fak(int b)
+{
+if((b==0)||(b==1)){
+return 1;
+}
+else{
+return fak(b-1)*b;
+}
+}
+int main(){
+int a;
+cout<<"Enter Value :";
+cin>>a;
+cout<<"Factorial is "<<fak(a);
+}
